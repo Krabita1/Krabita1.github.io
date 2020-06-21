@@ -1,0 +1,256 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+	<title>Візуалізація алгоритмів</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<noscript>
+		<link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+</head>
+
+<body class="is-preload">
+	<div id="wrapper">
+		<header id="header" class="alt">
+			<span class="logo"><img src="images/logo.svg" alt="" /></span>
+			<h1>Візуалізація сортувальних алгоритмів</h1>
+			<p>"Просто відсортуй"<br />
+				Створено студентом ЧПТ Ковтуном Станіславом.</p>
+		</header>
+
+		<nav id="nav">
+			<ul>
+				<li><a href="#intro" class="active">Вступ</a></li>
+				<li><a href="#first">Сортування гребінцем</a></li>
+				<li><a href="#second">Сортування бульбашкою</a></li>
+				<li><a href="#cta">Сортування змішуванням</a></li>
+			</ul>
+		</nav>
+
+		<div id="main">
+			<section id="intro" class="main">
+				<div class="spotlight">
+					<div class="content">
+						<header class="major">
+							<h2>Візуалізація</h2>
+						</header>
+						<p>Одним з найкращих способів вивчення роботи алгоритмів є візуалізація їх роботи.
+							Візуалізація алгоритму може бути визначениа як використання зображень для передачі
+							корисної інформації про алгоритми. Ця інформація може бути наочною ілюстрацією роботи
+							алгоритму,
+							його ефективності на різних видах входів або швидкості його виконання порівняно з іншими
+							алгоритмами
+							для тієї ж проблеми.</p>
+						<ul class="actions">
+							<li><a href="more.html" class="button">Дізнатись більше</a></li>
+						</ul>
+					</div>
+					<span class="image"><img src="images/sorting.png" alt="" /></span>
+				</div>
+			</section>
+
+			<section id="first" class="main special">
+				<header class="major">
+					<h2>Сортування гребінцем</h2>
+				</header>
+				<div>
+					<div class="settingsPanelBox"></div>
+					<div class="settingsPanel">
+
+						<form>
+							<label class="label">Оберіть вид візуалізації:</label>
+							<select id="selectBox1" class="softFlowSelect" onchange="changeSortView1()">
+								<option value="classicView">Класична</option>
+								<option value="gradientView">Градієнтна</option>
+							</select>
+						</form>
+						<label class="label">Налаштування:</label>
+						<div class="settingsRange">
+							Кількість елементів<br>
+							<input title="Number of elements" class="rangeCSS" type="range" min="30" max="240" step="1"
+								value="125" oninput="calcNewArr1()" id="elementsNumb1"><br>
+							Швидкість<br>
+							<input title="Speed" class="rangeCSS" type="range" min="10" max="200" step="5" value="105"
+								oninput="changeSpeed1()" id="codeSpeed1"><br>
+
+						</div>
+					</div>
+					<div class="sortViewsContainer">
+						<div class="sortPlace">
+							<canvas id="canvas1" width="900" height="400"></canvas>
+						</div>
+						<div class="buttonContainer">
+							<div class="playButton buttonn " id="firstButton1" 
+								onclick="startButton1()">
+								<div class="button-play1"></div>
+							</div>
+							<div class="resetButton buttonn " onclick="calcNewArr1()">
+								<div class="button-reset1"></div>
+							</div>
+						</div><br>
+						<br>
+					</div>
+				</div>
+				<div style="margin-top: 50px;">
+					<div align="justify" style="margin-left: 30px;"><img src="images/comb.gif" width="277" height="257" alt="Иллюстрация"
+							align="right" vspace="5" hspace="5" style="margin-left: 15px;">
+						Сортування гребінцем ( англ. comb sort ) - Це досить спрощений алгоритм сортування, спочатку
+						спроектований Влодзімеж Добосіевічем в 1980 р.
+						Пізніше він був перевідкритий і популяризував в статті Стівена Лейсі та Річарда Бокса в журналі
+						Byte Magazine у квітні 1991 р.
+						Сортування гребінцем покращує сортування бульбашкою, і конкурує з алгоритмами, подібними
+						швидкому сортуванню. Основна ідея - усунути "черепах",
+						або маленькі значення в кінці списку, які вкрай уповільнюють сортування бульбашкою ("кролики,
+						великі значення на початку списку, не представляють проблеми для сортування бульбашкою).
+					</div>
+				</div>
+				<footer class="major">
+					<ul class="actions special">
+						<li><a href="more.html" class="button">Дізнатись більше</a></li>
+					</ul>
+				</footer>
+			</section>
+
+			<section id="second" class="main special">
+				<header class="major">
+					<h2>Сортування бульбашкою</h2>
+				</header>
+				<div>
+					<div class="settingsPanelBox"></div>
+					<div class="settingsPanel">
+
+						<form>
+							<label class="label">Оберіть вид візуалізації:</label>
+							<select id="selectBox2" class="softFlowSelect" onchange="changeSortView2()">
+								<option value="classicView">Класична</option>
+								<option value="gradientView">Градієнтна</option>
+							</select>
+						</form>
+						<label class="label">Налаштування:</label>
+						<div class="settingsRange">
+							Кількість елементів<br>
+							<input title="Number of elements" class="rangeCSS" type="range" min="30" max="240" step="1"
+								value="125" oninput="calcNewArr2()" id="elementsNumb2"><br>
+							Швидкість<br>
+							<input title="Speed" class="rangeCSS" type="range" min="10" max="200" step="5" value="105"
+								oninput="changeSpeed2()" id="codeSpeed2"><br>
+
+						</div>
+					</div>
+					<div class="sortViewsContainer">
+						<div class="sortPlace">
+							<canvas id="canvas2" width="900" height="400"></canvas>
+						</div>
+						<div class="buttonContainer">
+							<div class="playButton buttonn " id="firstButton2" 
+								onclick="startButton2()">
+								<div class="button-play2"></div>
+							</div>
+							<div class="resetButton buttonn " onclick="calcNewArr2()">
+								<div class="button-reset2"></div>
+							</div>
+						</div><br>
+						<br>
+					</div>
+				</div>
+				<div style="margin-top: 50px;">
+					<div align="justify" style="margin-left: 30px;" ><img src="images/bubble.gif" width="277" height="257" alt="Иллюстрация"
+							align="right" vspace="5" hspace="5" style="margin-left: 15px;">
+						Сортування обміном або сортування бульбашкою є простим алгоритмом сортування. Алгоритм працює
+						таким чином — у поданому наборі
+						даних (списку чи масиві) порівнюються два сусідні елементи. Якщо один з елементів, не відповідає
+						критерію сортування (є більшим,
+						або ж, навпаки, меншим за свого сусіда), то ці два елементи міняються місцями. Прохід по списку
+						продовжується доти, доки дані не будуть
+						відсортованими. Алгоритм отримав свою назву від того, що процес сортування за ним нагадує
+						поведінку бульбашок повітря у резервуарі з водою.
+					</div>
+				</div>
+				<footer class="major">
+					<ul class="actions special">
+						<li><a href="more.html" class="button">Дізнатись більше</a></li>
+					</ul>
+				</footer>
+			</section>
+
+			<section id="cta" class="main special">
+				<header class="major">
+					<h2>Сортування змішуванням</h2>
+				</header>
+				<div>
+					<div class="settingsPanelBox"></div>
+					<div class="settingsPanel">
+
+						<form>
+							<label class="label">Оберіть вид візуалізації:</label>
+							<select id="selectBox3" class="softFlowSelect" onchange="changeSortView3()">
+								<option value="classicView">Класична</option>
+								<option value="gradientView">Градієнтна</option>
+							</select>
+						</form>
+						<label class="label">Налаштування:</label>
+						<div class="settingsRange">
+							Кількість елементів<br>
+							<input title="Number of elements" class="rangeCSS" type="range" min="30" max="240" step="1"
+								value="125" oninput="calcNewArr3()" id="elementsNumb3"><br>
+							Швидкість<br>
+							<input title="Speed" class="rangeCSS" type="range" min="10" max="200" step="5" value="105"
+								oninput="changeSpeed3()" id="codeSpeed3"><br>
+
+						</div>
+					</div>
+					<div class="sortViewsContainer">
+						<div class="sortPlace">
+							<canvas id="canvas3" width="900" height="400"></canvas>
+						</div>
+						<div class="buttonContainer">
+							<div class="playButton buttonn " id="firstButton3" 
+								onclick="startButton3()">
+								<div class="button-play3"></div>
+							</div>
+							<div class="resetButton buttonn " onclick="calcNewArr3()">
+								<div class="button-reset3"></div>
+							</div>
+						</div><br>
+						<br>
+					</div>
+				</div>
+				<div style="margin-top: 50px;">
+					<div align="justify" style="margin-left: 30px;"><img src="images/cocktail.gif" width="277" height="257" alt="Иллюстрация"
+							align="right" vspace="5" hspace="5" style="margin-left: 15px;">
+						Сортування змішуванням англ Cocktail sort — один із різновидів алгоритму сортування
+						бульбашкою Відрізняється від сортування бульбашкою тим, що сортування відбувається в обох
+						напрямках,
+						міняючи напрямок при кожному проході Цей алгоритм лише трішки складніший за сортування
+						бульбашкою, однак,
+						вирішує так звану проблему «черепах»
+					</div>
+				</div>
+				<footer class="major">
+					<ul class="actions special">
+						<li><a href="more.html" class="button">Дізнатись більше</a></li>
+					</ul>
+				</footer>
+			</section>
+
+		</div>
+		<footer id="footer"></footer>
+
+	</div>
+
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.scrollex.min.js"></script>
+	<script src="assets/js/jquery.scrolly.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+	<script src="assets/js/combSort.js"></script>
+	<script src="assets/js/bubbleSort.js"></script>
+	<script src="assets/js/cocktailSort.js"></script>
+</body>
+
+
+</html>
